@@ -24,13 +24,13 @@ TESTING_GUILD_ID = int(os.getenv('TESTING_GUILD_ID'))
 TESTING_CHANNEL_ID = int(os.getenv('TESTING_CHANNEL_ID'))
 TESTING_ROLE_ID = int(os.getenv('TESTING_ROLE_ID'))
 
-TESTING = True
+TESTING = False
 
 
 # When connected
 @bot.event
 async def on_ready():    
-    print(f"{bot.user} is ONLINE in {[guild async for guild in bot.fetch_guilds()]}")
+    print(f"{bot.user} is ONLINE in {[guild.name async for guild in bot.fetch_guilds()]}")
 
 
 @bot.event
